@@ -1,20 +1,19 @@
 ﻿using System;
 
-namespace FirstApplication.ConsoleApp
+class MainClass
 {
-    class Program
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            string MyName = "Jane";
-            byte MyAge = 27;
-            bool HaveIApet = true;
-            double MyShoeSize = 37.5;
 
-            Console.WriteLine("My name is " + MyName);
-            Console.WriteLine("MyAge " + MyAge);
-            Console.WriteLine("Do I have a pet? " + HaveIApet);
-            Console.WriteLine("My shoe size is " + MyShoeSize);
-        }
+        
+        Console.Write("Enter your name: ");
+        var name = Console.ReadLine();
+        Console.Write("Enter your age: ");
+        var age = checked((byte)int.Parse(Console.ReadLine()));
+        Console.WriteLine("Your name is {0} and age is {1} ", name, age);
+        Console.Write("Enter your birthdate: ");
+        var birthdate = Console.ReadLine();
+        Console.WriteLine($"Your birthdate is {birthdate} ");
+
     }
 }
