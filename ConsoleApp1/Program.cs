@@ -4,16 +4,31 @@ class MainClass
 {
     public static void Main(string[] args)
     {
+        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
-        
-        Console.Write("Enter your name: ");
-        var name = Console.ReadLine();
-        Console.Write("Enter your age: ");
-        var age = checked((byte)int.Parse(Console.ReadLine()));
-        Console.WriteLine("Your name is {0} and age is {1} ", name, age);
-        Console.Write("Enter your birthdate: ");
-        var birthdate = Console.ReadLine();
-        Console.WriteLine($"Your birthdate is {birthdate} ");
+        var color = Console.ReadLine();
 
+        if (color == "red")
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("Your color is red!");
+        }
+
+        else if (color == "green")
+        {
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("Your color is green!");
+        }
+        else
+        {
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("Your color is cyan!");
+        }
     }
 }
