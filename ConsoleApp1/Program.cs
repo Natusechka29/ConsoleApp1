@@ -2,41 +2,32 @@
 
 class MainClass
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+        Console.WriteLine("Напишите что-то");
+        var str = Console.ReadLine();
 
-        var color = Console.ReadLine();
+        Console.WriteLine("Укажите глубину эха");
+        var deep = int.Parse(Console.ReadLine());
 
-        switch (color)
+        Echo(str, deep);
+
+        Console.ReadKey();
+    }
+
+    static void Echo(string phrase, int deep)
+    {
+        
+        if (phrase.Length > 2)
         {
-            case "red":
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.Black;
+            phrase = phrase.Remove(0, 2);
+        }
 
-                Console.WriteLine("Your color is red!");
-                break;
+        Console.WriteLine("..." + phrase);
 
-            case "green":
-                Console.BackgroundColor = ConsoleColor.Green;
-                Console.ForegroundColor = ConsoleColor.Black;
-
-                Console.WriteLine("Your color is green!");
-                break;
-
-            case "cyan":
-                Console.BackgroundColor = ConsoleColor.Cyan;
-                Console.ForegroundColor = ConsoleColor.Black;
-
-                Console.WriteLine("Your color is cyan!");
-                break;
-
-            default:
-                Console.BackgroundColor = ConsoleColor.Yellow;
-                Console.ForegroundColor = ConsoleColor.Red;
-
-                Console.WriteLine("Your color is cyan!");
-                break;
+        if (deep > 1)
+        {
+            Echo(phrase, deep - 1);
         }
     }
 }
